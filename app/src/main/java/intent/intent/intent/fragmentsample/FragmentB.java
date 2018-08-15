@@ -16,11 +16,6 @@ public class FragmentB extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_b, container, false);
-      // addFragment(R.id.container, new FramentA());
         return view;
-    }
-
-    private void addFragment(@IdRes int container, Fragment fragment) {
-        getChildFragmentManager().beginTransaction().add(container, fragment).commit();
     }
 }
