@@ -5,8 +5,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 public class ScreenSlidePagerAdapter extends FragmentPagerAdapter {
-    int numbOfTabs;
-    public ScreenSlidePagerAdapter(FragmentManager fm, int numbOfTabs) {
+    private int numbOfTabs;
+
+    ScreenSlidePagerAdapter(FragmentManager fm, int numbOfTabs) {
         super(fm);
         this.numbOfTabs = numbOfTabs;
     }
@@ -14,9 +15,9 @@ public class ScreenSlidePagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int i) {
         switch (i) {
-            case 0: // Fragment # 0 - This will show FirstFragment
+            case 0:
                 return new FramentA();
-            case 1: // Fragment # 0 - This will show FirstFragment different title
+            case 1:
                 return new FragmentB();
             default:
                 return new FramentA();

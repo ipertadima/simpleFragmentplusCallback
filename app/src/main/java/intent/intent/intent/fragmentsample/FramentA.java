@@ -23,7 +23,7 @@ public class FramentA extends Fragment {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                callBackListener.onCallBack();
+                callBackListener.onCallBack("ssss");
             }
         });
         return view;

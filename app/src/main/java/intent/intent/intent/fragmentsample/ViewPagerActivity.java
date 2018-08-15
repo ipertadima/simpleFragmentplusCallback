@@ -9,7 +9,6 @@ import android.view.View;
 
 public class ViewPagerActivity extends AppCompatActivity implements CallbackListener {
     private ViewPager mPager;
-    private PagerAdapter mPagerAdapter;
     private TabLayout tabLayout;
 
     @Override
@@ -22,9 +21,11 @@ public class ViewPagerActivity extends AppCompatActivity implements CallbackList
         tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
 
         mPager = findViewById(R.id.pager);
-        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager(), 2);
+        PagerAdapter mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager(), 2);
         mPager.setAdapter(mPagerAdapter);
+
         mPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -44,7 +45,17 @@ public class ViewPagerActivity extends AppCompatActivity implements CallbackList
     }
 
     @Override
-    public void onCallBack() {
-        tabLayout.setVisibility(View.GONE   );
+    public void onCallBack(String a) {
+        if (tabLayout.getVisibility() == View.GONE) {
+            tabLayout.setVisibility(View.VISIBLE);
+        } else {
+            tabLayout.setVisibility(View.GONE);
+        }
+
+    }
+
+    @Override
+    public void onTest() {
+
     }
 }
